@@ -354,7 +354,7 @@ function applyDSP() {
 
 function getDivergence() {
   if (!divAuto) return divVal;
-  return (1-ptY) * FOCALS[focalIdx].divScale;
+  return ptY * FOCALS[focalIdx].divScale;
 }
 
 function updateHUD(panV, depthFar, div, eMs) {
