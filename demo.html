@@ -312,7 +312,7 @@ function applyDSP() {
   if (!actx) return;
   const f = FOCALS[focalIdx];
   const panV   = (ptX*2-1) * f.width;
-  const depthFar = ptY;
+  const depthFar = 1 - ptY;
 
   // Equal-power panning
   const angle = (panV+1)*Math.PI/4;
@@ -529,7 +529,7 @@ function drawSilhouette() {
   silCtx.clearRect(0,0,silCv.width,silCv.height);
   if (!showSizeRef) return;
   const z = zone();
-  const depthFar = ptY; // 0=NEAR 1=FAR
+  const depthFar = 1 - ptY; // 0=NEAR 1=FAR
   const minH = z.h*0.12, maxH = z.h*0.96;
   const silH = minH+(maxH-minH)*depthFar; // FAR=grand, NEAR=petit
   const unit = silH/8;
