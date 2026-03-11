@@ -601,12 +601,21 @@ function drawWaveform() {
 
 // ── Interaction ───────────────────────────────────────────────────────────────
 function normFromEvent(e) {
-  const rect=cv.getBoundingClientRect();
-  const z=zone();
-  const sx=cv.width/rect.width, sy=cv.height/rect.height;
+  const rect = cv.getBoundingClientRect();
+  const z    = zone();
+  // Use offsetX/Y for mouse, or compute from touches relative to element
+  let cx, cy;
+  if (e.touches) {
+    const t = e.touches[0];
+    cx = (t.clientX - rect.left) * (cv.width  / rect.width);
+    cy = (t.clientY - rect.top)  * (cv.height / rect.height);
+  } else {
+    cx = e.offsetX * (cv.width  / rect.width);
+    cy = e.offsetY * (cv.height / rect.height);
+  }
   return {
-    x: Math.max(0,Math.min(1,(e.clientX-rect.left)*sx-z.x)/z.w),
-    y: Math.max(0,Math.min(1,(e.clientY-rect.top )*sy-z.y)/z.h),
+    x: Math.max(0, Math.min(1, (cx - z.x) / z.w)),
+    y: Math.max(0, Math.min(1, (cy - z.y) / z.h)),
   };
 }
 function onMove(e) {
