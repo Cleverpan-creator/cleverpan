@@ -359,7 +359,7 @@ function getDivergence() {
 
 function updateHUD(panV, depthFar, div, eMs) {
   document.getElementById('vPan').textContent    = (panV>=0?'+':'')+Math.round(panV*100);
-  document.getElementById('vDepth').textContent  = depthFar<0.12?'NEAR':depthFar>0.88?'FAR':Math.round(depthFar*100)+'%';
+  document.getElementById('vDepth').textContent  = depthFar>0.88?'NEAR':depthFar<0.12?'FAR':Math.round((1-depthFar)*100)+'%';
   document.getElementById('vDiv').textContent    = div.toFixed(2);
   document.getElementById('vDel').textContent    = Math.round(eMs)+'ms';
   document.getElementById('vWidth').textContent  = Math.round(FOCALS[focalIdx].width*100)+'%';
