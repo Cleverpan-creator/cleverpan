@@ -413,9 +413,9 @@ function drawMain() {
     const frac = (z.y+z.h-lineTopY)/(z.h||1);
     const tx = vpX+(bx-vpX)*frac;
     const gr = ctx.createLinearGradient(tx,lineTopY,bx,z.y+z.h);
-    gr.addColorStop(0,'rgba(180,100,20,0)');
-    gr.addColorStop(0.15,`rgba(170,90,15,${a*0.6})`);
-    gr.addColorStop(1,`rgba(160,80,10,${a})`);
+    gr.addColorStop(0,'rgba(100,50,10,0)');
+    gr.addColorStop(0.15,`rgba(90,45,8,${a*0.6})`);
+    gr.addColorStop(1,`rgba(80,35,5,${a})`);
     ctx.strokeStyle=gr;
     ctx.lineWidth=0.7+(1-Math.abs(t-0.5)*2)*0.9;
     ctx.beginPath(); ctx.moveTo(tx,lineTopY); ctx.lineTo(bx,z.y+z.h); ctx.stroke();
