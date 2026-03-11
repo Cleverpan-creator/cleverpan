@@ -535,7 +535,7 @@ function drawSilhouette() {
   const unit = silH/8;
   const footY= z.y+z.h;
   const cx   = z.x+unit*0.55+4;
-  const a    = 0.15+(1-depthFar)*0.55;
+  const a    = 0.7+(1-depthFar)*0.25;
 
   silCtx.save();
   silCtx.beginPath(); silCtx.rect(z.x,z.y,z.w,z.h); silCtx.clip();
