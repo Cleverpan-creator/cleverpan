@@ -560,7 +560,7 @@ function drawHeroGrid() {
   for (let j=1;j<=10;j++) {
     const tp=j/10, py=H-(H-vpy)*Math.pow(tp,0.38);
     const phw=hw*Math.max(0,(py-vpy)/Math.max(1,H-vpy));
-    ctx.strokeStyle=`rgba(${soil[0]},${soil[1]},${soil[2]},${Math.min(0.7,tp*0.8)})`;
+    ctx.strokeStyle=`rgba(${soil[0]},${soil[1]},${soil[2]},${Math.min(0.9,tp*1.1)})`;
     ctx.lineWidth=0.5+tp*1.0;
     ctx.beginPath(); ctx.moveTo(Math.max(0,vpx-phw),py); ctx.lineTo(Math.min(W,vpx+phw),py); ctx.stroke();
   }
