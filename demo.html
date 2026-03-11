@@ -426,7 +426,7 @@ function drawMain() {
     const py = z.y+z.h - (z.y+z.h-lineTopY)*Math.pow(tp,0.4);
     if (py<lineTopY) continue;
     const hw = halfW*Math.max(0,(py-z.y)/(z.h||1));
-    ctx.strokeStyle=`rgba(160,80,10,${Math.min(0.75,tp*ptY*0.9)})`;
+    ctx.strokeStyle=`rgba(90,45,8,${Math.min(0.6,tp*ptY*0.8)})`;
     ctx.lineWidth=0.5+tp*0.5;
     ctx.beginPath();
     ctx.moveTo(Math.max(z.x,vpX-hw),py);
