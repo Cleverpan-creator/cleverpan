@@ -531,7 +531,7 @@ function drawSilhouette() {
   const z = zone();
   const depthFar = 1 - ptY; // 0=NEAR 1=FAR
   const minH = z.h*0.12, maxH = z.h*0.96;
-  const silH = minH+(maxH-minH)*depthFar; // FAR=grand, NEAR=petit
+  const silH = minH+(maxH-minH)*(1-depthFar); // NEAR=grand, FAR=petit
   const unit = silH/8;
   const footY= z.y+z.h;
   const cx   = z.x+unit*0.55+4;
