@@ -540,7 +540,7 @@ function drawHeroGrid() {
   const vpy = H * 0.08;
   const hw  = W * 0.55;
   const N   = 22;
-  const soil= [220, 140, 60];
+  const soil= [240, 180, 80];
 
   ctx.save();
   for (let i=0;i<N;i++) {
@@ -551,7 +551,7 @@ function drawHeroGrid() {
       const f0=0.06+s0*0.94,f1=0.06+s1*0.94;
       const x0=vpx+(bx-vpx)*f0,y0=vpy+(H-vpy)*f0;
       const x1=vpx+(bx-vpx)*f1,y1=vpy+(H-vpy)*f1;
-      const a=al*(0.08+s0*0.97);
+      const a=al*(0.15+s0*0.97);
       ctx.strokeStyle=`rgba(${soil[0]},${soil[1]},${soil[2]},${a})`;
       ctx.lineWidth=Math.max(0.4,2.2-dc*1.4);
       ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,y1); ctx.stroke();
