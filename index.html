@@ -545,7 +545,7 @@ function drawHeroGrid() {
   ctx.save();
   for (let i=0;i<N;i++) {
     const tf=i/(N-1), bx=(vpx-hw)+tf*hw*2, dc=Math.abs(tf-0.5)*2;
-    const al=0.55-dc*0.22;
+    const al=0.85-dc*0.15;
     for (let s=0;s<28;s++) {
       const s0=s/28,s1=(s+1)/28;
       const f0=0.06+s0*0.94,f1=0.06+s1*0.94;
